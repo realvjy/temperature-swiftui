@@ -7,15 +7,35 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var waveOffset: CGFloat = 0
+    
+    @State var progress: CGFloat = 0.5
+    @State var startAnimation: CGFloat = 0
+    
+    @State var waterFill: CGFloat = 0.5
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 1), Color(red: 0.93, green: 0.94, blue: 0.97, opacity: 1)]), startPoint: .init(x: 0.0, y: 0.75), endPoint: .init(x: 1.0, y: 1.0))
+                .edgesIgnoringSafeArea(.all)
+            Tube()
+            
         }
-        .padding()
+
+
+//        VStack {
+//            WaterWave()
+//            VStack {
+//                Image(systemName: "globe")
+//                    .imageScale(.large)
+//                    .foregroundColor(.accentColor)
+//                Text("Hello, world!")
+//            }
+//            .padding()
+//            Spacer()
+//        }
     }
 }
 
@@ -24,3 +44,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

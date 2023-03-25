@@ -14,6 +14,19 @@
 		1E16F2ED29CCE1CA00AC642B /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F2EC29CCE1CA00AC642B /* TemperatureTests.swift */; };
 		1E16F2F729CCE1CA00AC642B /* TemperatureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F2F629CCE1CA00AC642B /* TemperatureUITests.swift */; };
 		1E16F2F929CCE1CA00AC642B /* TemperatureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F2F829CCE1CA00AC642B /* TemperatureUITestsLaunchTests.swift */; };
+		1E16F30629CCE78400AC642B /* WaterWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F30529CCE78400AC642B /* WaterWave.swift */; };
+		1E16F30929CCEFDA00AC642B /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 1E16F30829CCEFDA00AC642B /* RiveRuntime */; };
+		1E16F31C29CCF5F600AC642B /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31529CCF5F600AC642B /* house.riv */; };
+		1E16F31D29CCF5F600AC642B /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31629CCF5F600AC642B /* confetti.riv */; };
+		1E16F31E29CCF5F600AC642B /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31729CCF5F600AC642B /* check.riv */; };
+		1E16F31F29CCF5F600AC642B /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31829CCF5F600AC642B /* menu_button.riv */; };
+		1E16F32029CCF5F600AC642B /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31929CCF5F600AC642B /* shapes.riv */; };
+		1E16F32129CCF5F600AC642B /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31A29CCF5F600AC642B /* button.riv */; };
+		1E16F32229CCF5F600AC642B /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F31B29CCF5F600AC642B /* icons.riv */; };
+		1E16F32429CCF69700AC642B /* water.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E16F32329CCF69600AC642B /* water.riv */; };
+		1E16F32729CCFF6B00AC642B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F32629CCFF6B00AC642B /* Home.swift */; };
+		1E16F32929CE1F8000AC642B /* Tube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F32829CE1F8000AC642B /* Tube.swift */; };
+		1E16F32C29CE216D00AC642B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16F32B29CE216D00AC642B /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,18 @@
 		1E16F2F229CCE1CA00AC642B /* TemperatureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemperatureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E16F2F629CCE1CA00AC642B /* TemperatureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUITests.swift; sourceTree = "<group>"; };
 		1E16F2F829CCE1CA00AC642B /* TemperatureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1E16F30529CCE78400AC642B /* WaterWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWave.swift; sourceTree = "<group>"; };
+		1E16F31529CCF5F600AC642B /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		1E16F31629CCF5F600AC642B /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		1E16F31729CCF5F600AC642B /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		1E16F31829CCF5F600AC642B /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		1E16F31929CCF5F600AC642B /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		1E16F31A29CCF5F600AC642B /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		1E16F31B29CCF5F600AC642B /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
+		1E16F32329CCF69600AC642B /* water.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = water.riv; sourceTree = "<group>"; };
+		1E16F32629CCFF6B00AC642B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		1E16F32829CE1F8000AC642B /* Tube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tube.swift; sourceTree = "<group>"; };
+		1E16F32B29CE216D00AC642B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E16F30929CCEFDA00AC642B /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +120,13 @@
 		1E16F2DA29CCE1C900AC642B /* Temperature */ = {
 			isa = PBXGroup;
 			children = (
+				1E16F32A29CE213300AC642B /* Utilities */,
+				1E16F32529CCFF4700AC642B /* View */,
 				1E16F2DB29CCE1C900AC642B /* TemperatureApp.swift */,
+				1E16F30529CCE78400AC642B /* WaterWave.swift */,
 				1E16F2DD29CCE1C900AC642B /* ContentView.swift */,
 				1E16F2DF29CCE1CA00AC642B /* Assets.xcassets */,
+				1E16F31429CCF5F600AC642B /* RiveAssets */,
 				1E16F2E129CCE1CA00AC642B /* Preview Content */,
 			);
 			path = Temperature;
@@ -127,6 +157,39 @@
 			path = TemperatureUITests;
 			sourceTree = "<group>";
 		};
+		1E16F31429CCF5F600AC642B /* RiveAssets */ = {
+			isa = PBXGroup;
+			children = (
+				1E16F32329CCF69600AC642B /* water.riv */,
+				1E16F31529CCF5F600AC642B /* house.riv */,
+				1E16F31629CCF5F600AC642B /* confetti.riv */,
+				1E16F31729CCF5F600AC642B /* check.riv */,
+				1E16F31829CCF5F600AC642B /* menu_button.riv */,
+				1E16F31929CCF5F600AC642B /* shapes.riv */,
+				1E16F31A29CCF5F600AC642B /* button.riv */,
+				1E16F31B29CCF5F600AC642B /* icons.riv */,
+			);
+			name = RiveAssets;
+			path = "../../../Downloads/SwiftUI Animations/RiveAssets";
+			sourceTree = "<group>";
+		};
+		1E16F32529CCFF4700AC642B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E16F32629CCFF6B00AC642B /* Home.swift */,
+				1E16F32829CE1F8000AC642B /* Tube.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E16F32A29CE213300AC642B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1E16F32B29CE216D00AC642B /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +206,9 @@
 			dependencies = (
 			);
 			name = Temperature;
+			packageProductDependencies = (
+				1E16F30829CCEFDA00AC642B /* RiveRuntime */,
+			);
 			productName = Temperature;
 			productReference = 1E16F2D829CCE1C900AC642B /* Temperature.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +281,9 @@
 				Base,
 			);
 			mainGroup = 1E16F2CF29CCE1C900AC642B;
+			packageReferences = (
+				1E16F30729CCEFDA00AC642B /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 1E16F2D929CCE1C900AC642B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +300,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E16F32029CCF5F600AC642B /* shapes.riv in Resources */,
+				1E16F31E29CCF5F600AC642B /* check.riv in Resources */,
 				1E16F2E329CCE1CA00AC642B /* Preview Assets.xcassets in Resources */,
+				1E16F32429CCF69700AC642B /* water.riv in Resources */,
+				1E16F31F29CCF5F600AC642B /* menu_button.riv in Resources */,
+				1E16F31C29CCF5F600AC642B /* house.riv in Resources */,
+				1E16F32129CCF5F600AC642B /* button.riv in Resources */,
 				1E16F2E029CCE1CA00AC642B /* Assets.xcassets in Resources */,
+				1E16F31D29CCF5F600AC642B /* confetti.riv in Resources */,
+				1E16F32229CCF5F600AC642B /* icons.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E16F30629CCE78400AC642B /* WaterWave.swift in Sources */,
+				1E16F32C29CE216D00AC642B /* Extensions.swift in Sources */,
+				1E16F32929CE1F8000AC642B /* Tube.swift in Sources */,
 				1E16F2DE29CCE1C900AC642B /* ContentView.swift in Sources */,
+				1E16F32729CCFF6B00AC642B /* Home.swift in Sources */,
 				1E16F2DC29CCE1C900AC642B /* TemperatureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Temperature/Preview Content\"";
+				DEVELOPMENT_TEAM = 9GRRFW5PQZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Temperature/Preview Content\"";
+				DEVELOPMENT_TEAM = 9GRRFW5PQZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -577,6 +660,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E16F30729CCEFDA00AC642B /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E16F30829CCEFDA00AC642B /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E16F30729CCEFDA00AC642B /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E16F2D029CCE1C900AC642B /* Project object */;
 }
