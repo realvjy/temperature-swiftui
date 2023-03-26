@@ -118,7 +118,7 @@ struct Home: View {
                 .frame(width: size.width, height: size.height, alignment: .center)
                 .onAppear{
                         //Looping animation
-                    withAnimation(.linear(duration: 0.8).repeatForever(autoreverses: false)){
+                    withAnimation(.easeInOut(duration: 0.8).repeatForever(autoreverses: false)){
                         //loop will not finish if staranimation will be larger than rect width
                         startAnimation = size.width
                     }

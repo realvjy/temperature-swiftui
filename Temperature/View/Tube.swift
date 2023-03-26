@@ -21,6 +21,20 @@ struct Tube: View {
     @State var sliderHeight: CGFloat = 0
     @State var sliderProgress: CGFloat = 0
     @State var lastDragValue: CGFloat = 0
+    let menuItems = [
+        ("Menu 1", "cold"),
+        ("Menu 2", "normal"),
+        ("Menu 3", "fire")
+    ]
+    @State private var selectedMenuIndex = 1
+    @State private var backgroundColor = Color(UIColor(hex: "#A4FFEF"))
+    
+    // selected item index
+    @State private var selectedMenu = 0
+    
+    // slide background position
+    @State private var backgroundOffset: CGFloat = 0
+    @State private var previousSelectedMenu = 0
     
     var body: some View {
         
@@ -52,16 +66,7 @@ struct Tube: View {
                         })
                     }
                     .frame(width: size.width, height: size.height, alignment: .top)
-                    //                    ZStack {
-                    //                        Text("\(Int(-sliderHeight)) \(Int(-(maxHeight - 48)))")
-                    //                            .fontWeight(.bold)
-                    //                            .foregroundColor(.black)
-                    //
-                    //                            .font(.system(size: 20))
-                    //                            .background(.white)
-                    //                            .cornerRadius(12)
-                    //                    }
-                    //                    .frame(width: size.width, height: size.height, alignment: .bottom)
+                    .offset(y: -10)
                     
                     
                     //Marker
@@ -152,30 +157,28 @@ struct Tube: View {
                         
                         RoundedRectangle(cornerRadius: 20)
                             .fill(.white)
-                            .frame(width: 25, height: 390)
+                            .frame(width: 26, height: 390)
                             .mask(RoundedRectangle(cornerRadius: 48))
-                            .blur(radius: 6)
-                            .opacity(0.6)
+                            .blur(radius: 7)
+                            .opacity(0.5)
                             .blendMode(.overlay)
-                            .offset(x: 18, y: 0)
+                            .offset(x: 16, y: 0)
                         
                         RoundedRectangle(cornerRadius: 20)
                             .fill(.white)
-                            .frame(width: 10, height: 370)
+                            .frame(width: 12, height: 370)
                             .mask(RoundedRectangle(cornerRadius: 48))
                             .blur(radius: 4)
-                            .opacity(0.4)
+                            .opacity(0.3)
                             .blendMode(.overlay)
-                            .offset(x: -20, y: 0)
-                        //                    RoundedRectangle(cornerRadius: 53)
-                        //                        .stroke(Color(red: 1, green: 1, blue: 1, opacity: 0.5), lineWidth: 5)
-                        //                        .frame(width: 104, height: 466)
+                            .offset(x: -24, y: 0)
+                        
                     }
                     
                     .frame(width: size.width, height: size.height, alignment: .center)
                     .onAppear{
                         //Looping animation
-                        withAnimation(.linear(duration: 0.8).repeatForever(autoreverses: false)){
+                        withAnimation(.linear(duration: 0.7).repeatForever(autoreverses: false)){
                             //loop will not finish if staranimation will be larger than rect width
                             startAnimation = size.width
                         }
@@ -185,25 +188,20 @@ struct Tube: View {
                         //Other stack for slider
                         VStack {
                             ZStack{
-                                LinearGradient(gradient: Gradient(colors: [
-                                    Color(UIColor(hex: "#EE3A32")),
-                                    Color(UIColor(hex: "#EBAC38")),
-                                    Color(UIColor(hex: "#D7C05E")),
-                                    Color(UIColor(hex: "#55C1DC")),
-                                ]),
-                                               startPoint: .init(x: 0.5, y: 0.0),
-                                               endPoint: .init(x: 0.5, y: 1.0))
                                 
-                                .frame(height: 1000)
-                                .cornerRadius(10)
-                                .padding(8)
+                                Rectangle()
+                                    .fill(getModifiedColor(Color.teal))
+                                    .frame(height: 1000)
+                                    .cornerRadius(10)
+                                    .padding(8)
+                                
                                 Rectangle()
                                     .fill(.red)
                                     .frame(width: 100, height: 100)
                                     .blur(radius: 8)
                             }
                             .mask(Image("curve-nob"))
-                            .offset(x: -20, y: position.y + 210 - sliderHeight)
+                            .offset(x: -24, y: position.y + 210 - sliderHeight)
                         }
                         .frame(width: 200)
                         .mask(
@@ -239,6 +237,19 @@ struct Tube: View {
                                 let progres = sliderHeight / maxHeight
                                 sliderProgress = progres <= 1.0 ? progres : 1
                                 
+                                switch sliderProgress {
+                                case 0..<0.5:
+                                    backgroundColor = Color(UIColor(hex: "#A4FFEF"))
+                                    selectedMenu = 0
+                                case 0.5..<0.8:
+                                    backgroundColor = Color(UIColor(hex: "#FFEDAE"))
+                                    selectedMenu = 1
+                                default:
+                                    backgroundColor = Color(UIColor(hex: "#FFC5C5"))
+                                    selectedMenu = 2
+                                }
+                                    
+                                
                                 
                             }).onEnded({ (value) in
                                 
@@ -257,7 +268,7 @@ struct Tube: View {
                             
                         }.offset( y:0)
                         VStack{
-                            Image("nob") // Replace "myImage" with the name of your image file
+                            Image("nob")
                                 .resizable()
                                 .frame(width: 48, height: 48)
                                 .offset(x: 0, y: -sliderHeight  )
@@ -273,16 +284,118 @@ struct Tube: View {
                 
             }
             
-            
-            
-            
-            
+            VStack{
+                Spacer()
+                HStack(spacing: 20) {
+                    MenuButton(imageName: "cold", label: "cold", isSelected: selectedMenu == 0)
+                        .scaleEffect(selectedMenu == 0 ? 1.2 : 1.0) // Scale up when selected
+                        .onTapGesture {
+                            backgroundColor = Color(UIColor(hex: "#A4FFEF"))
+                            previousSelectedMenu = selectedMenu
+                            sliderProgress = 0
+                            withAnimation {
+                                self.selectedMenu = 0
+                            }
+                        }
+                    MenuButton(imageName: "normal", label: "normal", isSelected: selectedMenu == 1)
+                        .scaleEffect(selectedMenu == 1 ? 1.2 : 1.0) // Scale up when selected
+                        .onTapGesture {
+                            backgroundColor = Color(UIColor(hex: "#FFEDAE"))
+                            previousSelectedMenu = selectedMenu
+                            sliderProgress = 0.5
+                            
+                            withAnimation {
+                                self.selectedMenu = 1
+                            }
+                        }
+                    
+                    MenuButton(imageName: "fire", label: "fire", isSelected: selectedMenu == 2)
+                        .scaleEffect(selectedMenu == 2 ? 1.2 : 1.0) // Scale up when selected
+                        .onTapGesture {
+                            backgroundColor = Color(UIColor(hex: "#FFC5C5"))
+                            previousSelectedMenu = selectedMenu
+                            sliderProgress = 1
+                            withAnimation {
+                                self.selectedMenu = 2
+                            }
+                        }
+                }
+                
+                .background(
+                    GeometryReader { proxy in
+                        let iconWidth = CGFloat(60) // change this to the actual width of your icon
+                        let backgroundWidth = proxy.size.width / 3
+                        let extraOffset = (proxy.size.width - backgroundWidth * 3 - 10) / 2 // calculate extra offset for first and last background
+                        let menuOffset = CGFloat(selectedMenu) * (backgroundWidth + 10)
+                        let centerOffset = (backgroundWidth - iconWidth) / 2
+                        let leadingOffset = centerOffset + menuOffset + extraOffset * (selectedMenu == 0 ? -1 : selectedMenu == 2 ? 1 : 0)
+
+                     
+                        RoundedRectangle(cornerRadius: 30)
+                            .foregroundColor(backgroundColor)
+                            .frame(width: iconWidth, height: proxy.size.height)
+                            .offset(x: leadingOffset - 10)
+                            .blur(radius: 7)
+                            .animation(.easeInOut(duration: 0.3), value: selectedMenu)
+                            .opacity(0.5)
+                            .onTapGesture {
+                                withAnimation {
+                                    self.selectedMenu = 2
+                                }
+                            }
+                    }
+                )
+                .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 30)
+   
+            }
+            .offset(y: -10)
             
         }
         
         
     }
     
+    
+    
+    private func getModifiedColor(_ color: Color) -> Color {
+        let teal = Color.teal
+        let green = Color.green
+        let yellow = Color.yellow
+        let orange = Color.orange
+        let red = Color.red
+        
+        switch sliderProgress {
+        case 0..<0.125:
+            return blendColors(teal, green, fraction: sliderProgress / 0.125)
+        case 0.125..<0.25:
+            return blendColors(green, yellow, fraction: (sliderProgress - 0.125) / 0.125)
+        case 0.25..<0.5:
+            return blendColors(yellow, orange, fraction: (sliderProgress - 0.25) / 0.25)
+        case 0.5..<0.75:
+            return blendColors(orange, red, fraction: (sliderProgress - 0.5) / 0.25)
+        case 0.75...1:
+            return red
+        default:
+            return color
+        }
+    }
+    
+    private func blendColors(_ color1: Color, _ color2: Color, fraction: Double) -> Color {
+        let cgColor1 = color1.cgColor
+        let cgColor2 = color2.cgColor
+        
+        guard let components1 = cgColor1?.components, let components2 = cgColor2?.components else {
+            return color1
+        }
+        
+        let red = components1[0] * (1 - fraction) + components2[0] * fraction
+        let green = components1[1] * (1 - fraction) + components2[1] * fraction
+        let blue = components1[2] * (1 - fraction) + components2[2] * fraction
+        let alpha = components1[3] * (1 - fraction) + components2[3] * fraction
+        
+        return Color(red: Double(red), green: Double(green), blue: Double(blue), opacity: Double(alpha))
+    }
 }
 
 
@@ -292,3 +405,26 @@ struct Tube_Previews: PreviewProvider {
     }
 }
 
+
+struct MenuButton: View {
+    var imageName: String
+    var label: String
+    var isSelected: Bool
+    
+    var body: some View {
+        ZStack(alignment: .center, content:{
+            Image(imageName)
+                //.foregroundColor(isSelected ? .blue : .gray)
+                .frame(width: 48, height: 48)
+            Rectangle()
+                .fill(Color(UIColor(hex: "#DFE5F1")).opacity(isSelected ? 0.0 : 1.0))
+                .frame(width: 52, height: 430, alignment: .bottom)
+                
+        })
+        .mask(Image(imageName))
+        .frame(width: 48, height: 48)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        
+    }
+}
