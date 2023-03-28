@@ -3,7 +3,7 @@
 //  Temperature
 //
 //  Created by vijay verma on 24/03/23.
-//
+//  This is testing out screen. Check Tube.swift for final code
 
 import SwiftUI
 
@@ -19,27 +19,13 @@ struct Home: View {
     var body: some View {
         VStack{
 
-            Text("Water")
-                .fontWeight(.semibold)
-                .foregroundColor(.gray)
-                .padding(.bottom)
-            
             // Mark: Wave Form
             GeometryReader{proxy in
                 let size = proxy.size
                 
                 ZStack {
                     
-                    // Mark: Water Drop
-//                    Image(systemName: "square.fill")
-//                        .resizable()
-//                        .renderingMode(.template)
-//                        .aspectRatio(contentMode: .fit)
-//                        .foregroundColor(.white)
-//                    //Streching in X Axis
-//                        .scaleEffect(x:1, y:1)
-//                        .offset(y: -1)
-                    // Wave From Shape
+                  
                     WaterWaveS(progress: progress, waveHeight: 0.02, offset: startAnimation)
                         .fill(
                             LinearGradient(gradient: Gradient(colors: [
@@ -53,15 +39,7 @@ struct Home: View {
                         )
                         .frame(width: 96, height: 456)
                         .mask(RoundedRectangle(cornerRadius: 48))
-//                        .overlay(
-//                                Capsule()
-//                                    .stroke(Color(red: 236/255, green: 234/255, blue: 235/255),
-//                                            lineWidth: 3)
-//                                    .shadow(color: Color.black.opacity(0.7), radius: 10, x: 0, y: 0)
-//                                    .clipShape(
-//                                        Capsule()
-//                                    )
-//                        )
+
                     //Water Drops shapes
                         .overlay(content: {
                             ZStack{

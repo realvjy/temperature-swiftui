@@ -49,7 +49,7 @@ struct Tube: View {
                         ZStack(alignment: .top, content: {
                             Text("\(Int((sliderProgress*(30))+20 ))")
                                 .fontWeight(.bold)
-                                .foregroundColor(Color(UIColor(hex: "#DFE5F1")))
+                                .foregroundColor(Color(UIColor(hex: "#BFC7D7")).opacity(0.6))
                                 .padding(.vertical, 10)
                                 .multilineTextAlignment(.trailing)
                                 .padding(.horizontal, 18)
@@ -57,7 +57,7 @@ struct Tube: View {
                                 .cornerRadius(12)
                             Text("°")
                                 .fontWeight(.regular)
-                                .foregroundColor(Color(UIColor(hex: "#DFE5F1")))
+                                .foregroundColor(Color(UIColor(hex: "#BFC7D7")).opacity(0.6))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 18)
                                 .font(.system(size: 80))
@@ -417,7 +417,7 @@ struct MenuButton: View {
                 //.foregroundColor(isSelected ? .blue : .gray)
                 .frame(width: 48, height: 48)
             Rectangle()
-                .fill(Color(UIColor(hex: "#DFE5F1")).opacity(isSelected ? 0.0 : 1.0))
+                .fill(Color(UIColor(hex: "#BFC7D7")).opacity(isSelected ? 0.0 : 1.0))
                 .frame(width: 52, height: 430, alignment: .bottom)
                 
         })
